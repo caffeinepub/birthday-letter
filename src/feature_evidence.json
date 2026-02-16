@@ -1,0 +1,83 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-resolve-the-current-deployment-build-failure-and-ensure-the-project-can-be-built-and-deployed-successfully-using-the-standard-internet-computer-template-workflow",
+      "featureTitle": "Resolve the current deployment/build failure and ensure the project can be built and deployed successfully using the standard Internet Computer template workflow.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-experience-is-ipad-chrome-friendly-responsive-layout-large-touch-targets-for-the-single-open-button-and-no-hover-only-interactions-required-to-use-the-app",
+      "featureTitle": "Ensure the experience is iPad Chrome friendly: responsive layout, large touch targets for the single \"Open\" button, and no hover-only interactions required to use the app.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-when-the-user-clicks-the-open-button-display-a-letter-style-view-that-includes-the-exact-provided-birthday-message-text-including-emojis-and-line-breaks-as-the-main-content-of-the-revealed-letter",
+      "featureTitle": "When the user clicks the \"Open\" button, display a letter-style view that includes the exact provided birthday message text (including emojis and line breaks) as the main content of the revealed letter.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BirthdayLetter.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-and-use-locally-rendered-romantic-static-image-assets-no-backend-image-fetching-to-support-the-envelope-letter-reveal-presentation",
+      "featureTitle": "Add and use locally-rendered romantic static image assets (no backend image fetching) to support the envelope/letter reveal presentation.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BirthdayLetter.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

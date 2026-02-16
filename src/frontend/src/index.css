@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Romantic red and white color palette */
+        --romantic-red: 0.55 0.22 15;
+        --romantic-red-dark: 0.45 0.25 15;
+        --romantic-red-light: 0.75 0.18 15;
+        --romantic-pink: 0.85 0.15 15;
+        --romantic-white: 0.99 0 0;
+        --romantic-cream: 0.96 0.01 60;
+        --romantic-dark: 0.25 0.02 15;
+        --romantic-medium: 0.50 0.05 15;
+        --romantic-light: 0.90 0.08 15;
+        
+        --background: var(--romantic-cream);
+        --foreground: var(--romantic-dark);
+        --card: var(--romantic-white);
+        --card-foreground: var(--romantic-dark);
+        --popover: var(--romantic-white);
+        --popover-foreground: var(--romantic-dark);
+        --primary: var(--romantic-red);
+        --primary-foreground: var(--romantic-white);
+        --secondary: var(--romantic-pink);
+        --secondary-foreground: var(--romantic-dark);
+        --muted: var(--romantic-light);
+        --muted-foreground: var(--romantic-medium);
+        --accent: var(--romantic-red-light);
+        --accent-foreground: var(--romantic-white);
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: var(--romantic-white);
+        --border: 0.90 0.05 15;
+        --input: 0.90 0.05 15;
+        --ring: var(--romantic-red);
+        --chart-1: var(--romantic-red);
+        --chart-2: var(--romantic-pink);
+        --chart-3: var(--romantic-red-light);
+        --chart-4: var(--romantic-red-dark);
+        --chart-5: var(--romantic-light);
+    }
+
+    .dark {
+        --background: 0.15 0.02 15;
+        --foreground: var(--romantic-white);
+        --card: 0.20 0.02 15;
+        --card-foreground: var(--romantic-white);
+        --popover: 0.20 0.02 15;
+        --popover-foreground: var(--romantic-white);
+        --primary: var(--romantic-red-light);
+        --primary-foreground: var(--romantic-dark);
+        --secondary: 0.30 0.03 15;
+        --secondary-foreground: var(--romantic-white);
+        --muted: 0.30 0.03 15;
+        --muted-foreground: var(--romantic-light);
+        --accent: var(--romantic-red);
+        --accent-foreground: var(--romantic-white);
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: var(--romantic-white);
+        --border: 0.30 0.03 15;
+        --input: 0.30 0.03 15;
+        --ring: var(--romantic-red-light);
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Georgia', 'Times New Roman', serif;
+    }
+}
+
+@layer components {
+    /* Hearts pattern background */
+    .hearts-pattern {
+        @apply absolute inset-0 w-full h-full;
+        background-image: url('/assets/generated/hearts-pattern.dim_1024x1024.png');
+        background-repeat: repeat;
+        background-size: 512px 512px;
+        opacity: 0.15;
+        animation: float-pattern 60s linear infinite;
+    }
+
+    /* Letter paper styling */
+    .letter-paper {
+        @apply relative;
+        background-image: url('/assets/generated/letter-paper.dim_1400x900.png');
+        background-size: cover;
+        background-position: center;
+        background-color: oklch(var(--romantic-white));
+        border: 2px solid oklch(var(--romantic-light));
+    }
+
+    /* Letter content styling */
+    .letter-content {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Envelope container */
+    .envelope-container {
+        filter: drop-shadow(0 20px 40px rgba(220, 38, 38, 0.2));
+    }
+}
+
+@layer utilities {
+    /* Custom romantic colors */
+    .text-romantic-red {
+        color: oklch(var(--romantic-red));
+    }
+    
+    .text-romantic-red-dark {
+        color: oklch(var(--romantic-red-dark));
+    }
+    
+    .text-romantic-red-light {
+        color: oklch(var(--romantic-red-light));
+    }
+    
+    .text-romantic-pink {
+        color: oklch(var(--romantic-pink));
+    }
+    
+    .text-romantic-dark {
+        color: oklch(var(--romantic-dark));
+    }
+    
+    .text-romantic-medium {
+        color: oklch(var(--romantic-medium));
+    }
+    
+    .text-romantic-light {
+        color: oklch(var(--romantic-light));
+    }
+    
+    .bg-romantic-red {
+        background-color: oklch(var(--romantic-red));
+    }
+    
+    .bg-romantic-red-dark {
+        background-color: oklch(var(--romantic-red-dark));
+    }
+    
+    .fill-romantic-red {
+        fill: oklch(var(--romantic-red));
+    }
+
+    /* Romantic shadow */
+    .shadow-romantic {
+        box-shadow: 0 20px 50px -12px oklch(var(--romantic-red) / 0.4);
+    }
+
+    /* Animations */
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-20px) rotate(5deg);
+        }
+    }
+
+    @keyframes float-slow {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-15px) rotate(-3deg);
+        }
+    }
+
+    @keyframes float-slower {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-10px) rotate(3deg);
+        }
+    }
+
+    @keyframes float-pattern {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 512px 512px;
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scale-in {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes pulse-gentle {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-float-slow {
+        animation: float-slow 4s ease-in-out infinite;
+    }
+
+    .animate-float-slower {
+        animation: float-slower 5s ease-in-out infinite;
+    }
+
+    .animate-fade-in {
+        animation: fade-in 1s ease-out;
+    }
+
+    .animate-fade-in-delay {
+        animation: fade-in 1s ease-out 0.3s both;
+    }
+
+    .animate-scale-in {
+        animation: scale-in 0.5s ease-out;
+    }
+
+    .animate-pulse-gentle {
+        animation: pulse-gentle 2s ease-in-out infinite;
+    }
+}
+
+/* Responsive touch-friendly adjustments for iPad */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+    
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Ensure smooth scrolling on iOS */
+@supports (-webkit-touch-callout: none) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}

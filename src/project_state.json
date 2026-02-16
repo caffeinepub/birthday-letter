@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a simple romantic interactive single-purpose web page (HTML/CSS/JS) for a birthday surprise with an \"Open\" button that reveals a letter image/message, optimized to run in Chrome on an iPad with a red/white theme.",
+  "architectural_notes": [],
+  "known_issues": [
+    "Deployment failed during assistant attempt to build/deploy the web page."
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Romantic envelope illustration, red/white palette (envelope-hero.dim_1600x900.png)\n- Subtle seamless heart pattern background, red on off-white (hearts-pattern.dim_1024x1024.png)\n- Letter paper texture background, warm white with soft red accents (letter-paper.dim_1400x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-purpose-romantic-interactive-web-page-that-displays-only-one-primary-action-a-button-labeled-open",
+      "title": "Create a single-purpose romantic interactive web page that displays only one primary action: a button labeled \"Open\".",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-the-open-button-reveal-a-letter-style-view-that-shows-the-exact-birthday-message-text-provided-by-the-user",
+      "title": "When the user clicks the \"Open\" button, reveal a letter-style view that shows the exact birthday message text provided by the user.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-romantic-red-and-white-theme-consistently-across-the-page-background-button-typography-and-letter-presentation-with-a-coherent-visual-style-suitable-for-a-birthday-surprise",
+      "title": "Apply a romantic red-and-white theme consistently across the page (background, button, typography, and letter presentation) with a coherent visual style suitable for a birthday surprise.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-include-required-generated-static-image-assets-and-render-them-locally-from-the-frontend-do-not-fetch-images-from-the-backend-to-support-the-letter-reveal-experience",
+      "title": "Include required generated static image assets and render them locally from the frontend (do not fetch images from the backend) to support the letter reveal experience.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-resolve-the-current-deployment-build-failure-and-ensure-the-project-can-be-built-and-deployed-successfully-using-the-standard-internet-computer-template-workflow",
+      "title": "Resolve the current deployment/build failure and ensure the project can be built and deployed successfully using the standard Internet Computer template workflow.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-experience-is-ipad-chrome-friendly-responsive-layout-large-touch-targets-for-the-single-open-button-and-no-hover-only-interactions-required-to-use-the-app",
+      "title": "Ensure the experience is iPad Chrome friendly: responsive layout, large touch targets for the single \"Open\" button, and no hover-only interactions required to use the app.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-the-open-button-display-a-letter-style-view-that-includes-the-exact-provided-birthday-message-text-including-emojis-and-line-breaks-as-the-main-content-of-the-revealed-letter",
+      "title": "When the user clicks the \"Open\" button, display a letter-style view that includes the exact provided birthday message text (including emojis and line breaks) as the main content of the revealed letter.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-use-locally-rendered-romantic-static-image-assets-no-backend-image-fetching-to-support-the-envelope-letter-reveal-presentation",
+      "title": "Add and use locally-rendered romantic static image assets (no backend image fetching) to support the envelope/letter reveal presentation.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a romantic-themed interactive birthday web page with a single \"Open\" option/button.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "On clicking \"Open\", display a letter image containing the provided birthday message text.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Apply a red and white romantic color scheme and ensure the page runs easily on iPad Chrome using HTML/CSS/JavaScript.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Birthday Letter",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,132 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Princess Birthday Letter — build fix + romantic single-page reveal (frontend-only)",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Fix frontend build/deploy issues so the standard IC template workflow produces a working, loadable frontend.",
+      "acceptanceCriteria": [
+        "A clean build completes without errors in the standard project workflow.",
+        "A deploy completes without errors and the frontend loads in a browser."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the missing App component imported by frontend/src/main.tsx so the React app compiles and renders a single-page experience. Keep it self-contained and avoid adding extra pages/navigation per non-goals."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create the missing global stylesheet imported by frontend/src/main.tsx; include Tailwind base layers (if Tailwind is part of the template) and define the red-and-white romantic theme CSS variables used by tailwind.config.js."
+        },
+        {
+          "path": "frontend/package.json",
+          "operation": "create",
+          "description": "Add/restore the frontend package manifest and standard build scripts consistent with the selected build-template-react and initial-app templates. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/vite.config.ts",
+          "operation": "create",
+          "description": "Add/restore Vite configuration needed by the standard template build so the frontend can bundle successfully (no backend changes in this plan). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/tsconfig.json",
+          "operation": "create",
+          "description": "Add/restore TypeScript configuration required for React + Vite builds so compilation succeeds in CI/deploy workflows. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/postcss.config.js",
+          "operation": "create",
+          "description": "Add/restore PostCSS config required for Tailwind processing during build so styles compile without errors. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Ensure the document shell is valid and minimal for Vite (title/meta/viewport already present); adjust only if needed to align with the standard template build output and prevent build-time HTML validation errors."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Make the single-action experience iPad Chrome friendly with responsive layout, large tap target for the Open button, and no hover-only interactions.",
+      "acceptanceCriteria": [
+        "On a tablet-sized viewport, the button remains fully visible without scrolling.",
+        "The \"Open\" button is easily tappable (no tiny hit area), and the reveal action works via touch."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Implement responsive single-screen layout that centers content and keeps the primary \"Open\" button visible on tablet viewports; ensure the interaction is click/tap based (no hover-only gating)."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global responsive/touch-friendly defaults (e.g., comfortable base sizing, safe-area handling) and enforce the red-and-white romantic theme consistently."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "On clicking \"Open\", reveal a letter-style view containing the exact provided birthday message text with emojis and the explicit line break.",
+      "acceptanceCriteria": [
+        "Clicking \"Open\" replaces (or overlays) the initial single-action view with a letter-style presentation.",
+        "The revealed message text matches the user-provided text exactly, including emojis and the explicit line break between \"thi\" and \"Us\"."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add state-driven reveal behavior: initial view shows only the single primary action; tapping/clicking \"Open\" transitions to the letter-style presentation."
+        },
+        {
+          "path": "frontend/src/components/BirthdayLetter.tsx",
+          "operation": "create",
+          "description": "Create a presentational component that renders the exact provided message text preserving emojis and line breaks (render as pre-wrapped text) and styles it as a letter view; wire it into frontend/src/App.tsx so it is not orphaned."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Bundle and reference romantic static images locally (no backend fetching) to support the envelope/letter reveal presentation.",
+      "acceptanceCriteria": [
+        "All images used for the envelope/letter reveal are included as static frontend assets and referenced locally.",
+        "No frontend code requests images from the backend at runtime."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/envelope-hero.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the required romantic envelope illustration as a static frontend asset used by the initial/reveal presentation (local reference only)."
+        },
+        {
+          "path": "frontend/public/assets/generated/hearts-pattern.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the required seamless hearts pattern as a static frontend asset used as the background layer (local reference only)."
+        },
+        {
+          "path": "frontend/public/assets/generated/letter-paper.dim_1400x900.png",
+          "operation": "create",
+          "description": "Add the required letter paper texture as a static frontend asset used by the revealed letter view (local reference only)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Reference the static assets locally from the UI (no runtime backend image fetching) and use them to present an envelope-to-letter reveal feel while preserving the single-action flow."
+        },
+        {
+          "path": "frontend/src/components/BirthdayLetter.tsx",
+          "operation": "modify",
+          "description": "Apply the letter-paper background (local static asset) and typography/layout styling appropriate for a letter presentation; ensure it remains readable and responsive on iPad Chrome."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add any global background styling needed to incorporate the hearts pattern (local static asset) while maintaining the red-and-white romantic palette."
+        }
+      ]
+    }
+  ]
+}

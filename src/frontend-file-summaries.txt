@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Main application component that displays the initial romantic landing page with an \"Open\" button and transitions to the birthday letter view when clicked.",
+  "frontend/src/components/BirthdayLetter.tsx": "Birthday letter component that displays the romantic birthday message with decorative elements, animations, and the exact user-provided text including emojis and line breaks.",
+  "frontend/src/index.css": "Global stylesheet with romantic red-and-white OKLCH color system, custom animations (float, fade-in, pulse), background patterns, and responsive touch-friendly styles for iPad.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color palette tokens, custom shadows, serif font family (Georgia), and design system tokens for the birthday theme."
+}

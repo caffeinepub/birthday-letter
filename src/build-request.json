@@ -1,0 +1,96 @@
+{
+  "kind": "build_request",
+  "title": "Fix deployment and finalize romantic single-page birthday surprise",
+  "projectName": "Princess Birthday Letter",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "text": "Resolve the current deployment/build failure and ensure the project can be built and deployed successfully using the standard Internet Computer template workflow.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "🙏 Sorry, deployment failed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A clean build completes without errors in the standard project workflow.",
+        "A deploy completes without errors and the frontend loads in a browser."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Ensure the experience is iPad Chrome friendly: responsive layout, large touch targets for the single \"Open\" button, and no hover-only interactions required to use the app.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "be fully interactive using HTML, CSS, and JavaScript so that I can easily run it on my iPad using Chrome."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On a tablet-sized viewport, the button remains fully visible without scrolling.",
+        "The \"Open\" button is easily tappable (no tiny hit area), and the reveal action works via touch."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "When the user clicks the \"Open\" button, display a letter-style view that includes the exact provided birthday message text (including emojis and line breaks) as the main content of the revealed letter.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "When she clicks Open, show her a letter image telling her “Happy Birthday 🎂 My Princess👸🏻💞 Subah bhi tum, shaam bhi tum, Har khushi ka naam bhi tum, Zindagi jo adhoori lagti thi\nUs kahani ka anjaam bhi tum..💞🫂 I love you upar waala tumko wo har khushi de jiske tum haqdaar ho Or me to tumhara hu hi jaan 😚💗,”."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking \"Open\" replaces (or overlays) the initial single-action view with a letter-style presentation.",
+        "The revealed message text matches the user-provided text exactly, including emojis and the explicit line break between \"thi\" and \"Us\"."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add and use locally-rendered romantic static image assets (no backend image fetching) to support the envelope/letter reveal presentation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "show her a letter image"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All images used for the envelope/letter reveal are included as static frontend assets and referenced locally.",
+        "No frontend code requests images from the backend at runtime."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui; compose them instead.",
+    "Do not edit frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, or frontend/src/main.tsx.",
+    "Keep backend logic within the single Motoko actor (backend/main.mo) if any backend changes are required.",
+    "Use a red-and-white romantic theme consistently; do not introduce unrelated color palettes."
+  ],
+  "nonGoals": [
+    "Adding multiple pages, navigation, or additional actions beyond the single \"Open\" primary action.",
+    "User accounts, Internet Identity login, or any authentication flow.",
+    "Persisting messages or user state in the backend.",
+    "Integrations with external APIs or third-party services."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Romantic envelope illustration, red/white palette (envelope-hero.dim_1600x900.png)",
+      "Subtle seamless heart pattern background, red on off-white (hearts-pattern.dim_1024x1024.png)",
+      "Letter paper texture background, warm white with soft red accents (letter-paper.dim_1400x900.png)"
+    ],
+    "edits": []
+  }
+}
